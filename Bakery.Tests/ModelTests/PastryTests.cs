@@ -52,11 +52,20 @@ namespace PastryBakery.Tests
     [TestMethod]
     public void PastryChoice_AdjustForCupcake_Int()
     {
-      Pastry newCust = new Pastry("0", "cupcake");
+      Pastry newCust = new Pastry("6", "cupcake");
       newCust.PastryCalc();
-      newCust.PastryChoiceAdjust();
       newCust.PastrySaleCalc();
-      Assert.AreEqual(0, newCust.PastrySubTotal);
+      newCust.PastryChoiceAdjust();
+      Assert.AreEqual(22, newCust.PastrySubTotal);
+    }
+      [TestMethod]
+    public void PastryChoice_AdjustForCupcakeDoubleCheck_Int()
+    {
+      Pastry newCust = new Pastry("13", "cupcake");
+      newCust.PastryCalc();
+      newCust.PastrySaleCalc();
+      newCust.PastryChoiceAdjust();
+      Assert.AreEqual(48, newCust.PastrySubTotal);
     }
   }
 }
