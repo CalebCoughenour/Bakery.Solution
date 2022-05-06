@@ -29,9 +29,20 @@ public class Program
       int totalPrice = newBreadCount.BreadSubTotal + newPastryCount.PastrySubTotal;
 
       Console.WriteLine("GRAND TOTAL: " + totalPrice);
-      Console.WriteLine("------------------------------------");
+      Console.WriteLine("---------------------------------------------------------------");
       Console.WriteLine("Is this total okay? Enter 'Y' to EXIT, Enter 'N' to restart order");
       string exitResponse = Console.ReadLine();
+      while(true)
+      {
+        if (exitResponse.ToUpper() != "Y" && exitResponse.ToUpper() != "N")
+        {
+          Console.WriteLine("Please Answer 'Y' or 'N'");
+          exitResponse = Console.ReadLine();
+        } else
+        {
+          break;
+        }
+      }
       if (exitResponse.ToUpper() == "Y")
       {
         break;
