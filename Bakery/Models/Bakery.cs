@@ -42,5 +42,13 @@ namespace Bakery.Models
       PastryCount = int.Parse(pastries);
       PastrySubTotal = 0;
     }
+    public int PastryCalc()
+    {
+      for (int i = 0; i < PastryCount; i++)
+      {
+        PastrySubTotal += 2;
+      }
+      return PastrySubTotal;
+    }
   }
 }
