@@ -44,6 +44,14 @@ namespace Bakery.Tests
       newCust.BreadSaleCalc();
       Assert.AreEqual(40, newCust.BreadSubTotal);
     }
+    [TestMethod]
+    public void AddBread_CheckForZeroEntry_Int()
+    {
+      Bread newCust = new Bread("0");
+      newCust.BreadCalc();
+      newCust.BreadSaleCalc();
+      Assert.AreEqual(0, newCust.BreadSubTotal);
+    }
   }
   [TestClass]
   public class PastryTests
@@ -82,6 +90,14 @@ namespace Bakery.Tests
       newCust.PastryCalc();
       newCust.PastrySaleCalc();
       Assert.AreEqual(20, newCust.PastrySubTotal);
+    }
+    [TestMethod]
+    public void AddPastry_CheckForZeroEntry_Int()
+    {
+      Pastry newCust = new Pastry("0");
+      newCust.PastryCalc();
+      newCust.PastrySaleCalc();
+      Assert.AreEqual(0, newCust.PastrySubTotal);
     }
   }
 }
