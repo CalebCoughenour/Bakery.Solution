@@ -1,6 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System;
+using Bakery.Models;
+
 
 namespace Bakery.Tests
 {
@@ -10,8 +12,8 @@ namespace Bakery.Tests
     [TestMethod]
     public void ItemConstructor_CreatesInstanceOfBreadObject_CustomerBread()
     {
-      CustomerBread newCust = new CustomerBread("4");
-      Assert.AreEqual(typeof(CustomerBread), newCust(GetType()));
+      Bread newCust = new Bread("4");
+      Assert.AreEqual(typeof(Bread), newCust.GetType());
     }
   }
 }
