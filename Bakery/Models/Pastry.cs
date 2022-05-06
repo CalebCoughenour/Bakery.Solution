@@ -29,5 +29,13 @@ namespace PastryBakery.Models
       }
       return PastrySubTotal;
     }
+    public int PastryChoiceAdjust()
+    {
+      if(PastryType.ToLower() == "cupcake")
+      {
+        PastrySubTotal += (2 * PastryCount);
+      }
+      return PastrySubTotal;
+    }
   }
 }
