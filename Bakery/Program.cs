@@ -24,7 +24,9 @@ public class Program
     newPastryCount.PastryCalc();
     newPastryCount.PastrySaleCalc();
 
-    Console.WriteLine("GRAND TOTAL: " + newBreadCount.BreadSubTotal + newPastryCount.PastrySubTotal);
+    int totalPrice = newBreadCount.BreadSubTotal + newPastryCount.PastrySubTotal;
+
+    Console.WriteLine("GRAND TOTAL: " + totalPrice);
 
   }
 }
