@@ -27,9 +27,16 @@ public class Program
       newPastryCount.PastrySaleCalc();
 
       int totalPrice = newBreadCount.BreadSubTotal + newPastryCount.PastrySubTotal;
-
-      Console.WriteLine("GRAND TOTAL: " + totalPrice);
-      Console.WriteLine("---------------------------------------------------------------");
+      if (newBreadCount.BreadCount >= 5)
+      {
+        double breadDiscount = newBreadCount.ApplyDiscount();
+        Console.WriteLine("GRAND TOTAL: " + (breadDiscount + newPastryCount.PastrySubTotal));
+      }
+      else
+      {
+        Console.WriteLine("GRAND TOTAL: " + totalPrice);
+        Console.WriteLine("---------------------------------------------------------------");
+      }
       Console.WriteLine("Is this total okay? Enter 'Y' to EXIT, Enter 'N' to restart order");
       string exitResponse = Console.ReadLine();
       while(true)
