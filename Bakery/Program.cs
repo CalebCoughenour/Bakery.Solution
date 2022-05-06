@@ -10,7 +10,7 @@ public class Program
     while(true)
     {
       Console.WriteLine("Hello and welcome to Pierre's Bakery!");
-      Console.WriteLine("Our Bread Prices: $5 Each // Buy 2, get 1 Free!");
+      Console.WriteLine("Our Bread Prices: $5 Each // Buy 2, get 1 Free and 25% off 5 or more!!");
       Console.WriteLine("Our Pastry Prices: $2 Each // Every 3rd Pastry ONLY $1!");
       Console.WriteLine("Today only! Two types of pastry! Cupcake or Danish!");
       Console.WriteLine("*Cupcakes are $2 extra each // $1 off every 3rd pastry still applies*");
