@@ -21,5 +21,12 @@ namespace Bakery.Tests
       Bread newCust = new Bread("4");
       Assert.AreEqual(4, newCust.BreadCount);
     }
+    [TestMethod]
+    public void AddBread_CorrectlyAddBreadPrices_Int()
+    {
+      Bread newCust = new Bread("4");
+      newCust.BreadCalc();
+      Assert.AreEqual(20, newCust.BreadSubTotal);
+    }
   }
 }
