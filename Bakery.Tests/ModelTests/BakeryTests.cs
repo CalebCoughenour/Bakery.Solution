@@ -16,7 +16,7 @@ namespace Bakery.Tests
       Assert.AreEqual(typeof(Bread), newCust.GetType());
     }
     [TestMethod]
-    public void ItemConstructor_CorrectlyParsesString_int()
+    public void ItemConstructor_CorrectlyParsesBreadString_int()
     {
       Bread newCust = new Bread("4");
       Assert.AreEqual(4, newCust.BreadCount);
@@ -49,13 +49,13 @@ namespace Bakery.Tests
   public class PastryTests
   {
      [TestMethod]
-    public void ItemConstructor_CreatesInstanceOfBreadObject_CustomerPastry()
+    public void ItemConstructor_CreatesInstanceOfPastryObject_CustomerPastry()
     {
       Pastry newCust = new Pastry("4");
       Assert.AreEqual(typeof(Pastry), newCust.GetType());
     }
     [TestMethod]
-    public void ItemConstructor_CorrectlyParsesString_int()
+    public void ItemConstructor_CorrectlyParsesPastryString_int()
     {
       Pastry newCust = new Pastry("4");
       Assert.AreEqual(4, newCust.PastryCount);
