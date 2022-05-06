@@ -17,12 +17,29 @@ public class Program
       
       Console.WriteLine("How many bread loaves?");
       string userBreadInput = Console.ReadLine();
+
+      while(true)
+      {
+        long num = 0;
+        bool canConvert = long.TryParse(userBreadInput, out num);
+        if (canConvert == false)
+        {
+          Console.WriteLine("Please enter a number");
+          userBreadInput = Console.ReadLine();
+        }
+        else
+        {
+          break;
+        }
+      }
+
       Bread newBreadCount = new Bread(userBreadInput);
       newBreadCount.BreadCalc();
       newBreadCount.BreadSaleCalc();
 
       Console.WriteLine("How many pastries?");
       string pastryCount = Console.ReadLine();
+
       while(true)
       {
         long num = 0;
