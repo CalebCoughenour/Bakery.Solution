@@ -7,9 +7,9 @@ namespace Bakery.Models
     public int BreadCount {get; set;}
     public int BreadSubTotal {get; set;}
 
-    public Bread(string count)
+    public Bread(string bread)
     {
-      BreadCount = int.Parse(count);
+      BreadCount = int.Parse(bread);
       BreadSubTotal = 0;
     }
 
@@ -30,5 +30,10 @@ namespace Bakery.Models
       }
       return BreadSubTotal;
     }
+  }
+
+  public class Pastry
+  {
+    
   }
 }

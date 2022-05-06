@@ -45,4 +45,14 @@ namespace Bakery.Tests
       Assert.AreEqual(40, newCust.BreadSubTotal);
     }
   }
+  [TestClass]
+  public class PastryTests
+  {
+     [TestMethod]
+    public void ItemConstructor_CreatesInstanceOfBreadObject_CustomerPastry()
+    {
+      Pastry newCust = new Pastry("4");
+      Assert.AreEqual(typeof(Pastry), newCust.GetType());
+    }
+  }
 }
