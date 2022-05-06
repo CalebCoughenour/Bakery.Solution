@@ -50,14 +50,14 @@ namespace BreadBakery.Tests
       newCust.BreadSaleCalc();
       Assert.AreEqual(0, newCust.BreadSubTotal);
     }
-    // [TestMethod]
-    // public void DiscountBread_TwentyFivePercentOff_Int()
-    // {
-    //   Bread newCust = new Bread("5");
-    //   newCust.BreadCalc();
-    //   newCust.BreadSaleCalc();
-    //   newCust.ApplyDiscount();
-    //   Assert.AreEqual(15, newCust.BreadSubTotal);
-    // }
+    [TestMethod]
+    public void DiscountBread_TwentyFivePercentOff_Int()
+    {
+      Bread newCust = new Bread("5");
+      newCust.BreadCalc();
+      newCust.BreadSaleCalc();
+      newCust.ApplyDiscount();
+      Assert.AreEqual(15, newCust.ApplyDiscount());
+    }
   }
 }
