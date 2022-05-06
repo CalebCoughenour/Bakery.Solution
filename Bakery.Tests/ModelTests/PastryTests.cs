@@ -9,26 +9,26 @@ namespace PastryBakery.Tests
     [TestMethod]
     public void ItemConstructor_CreatesInstanceOfPastryObject_CustomerPastry()
     {
-      Pastry newCust = new Pastry("4");
+      Pastry newCust = new Pastry("4", "cupcake");
       Assert.AreEqual(typeof(Pastry), newCust.GetType());
     }
     [TestMethod]
     public void ItemConstructor_CorrectlyParsesPastryString_int()
     {
-      Pastry newCust = new Pastry("4");
+      Pastry newCust = new Pastry("4", "cupcake");
       Assert.AreEqual(4, newCust.PastryCount);
     }
     [TestMethod]
     public void AddPastry_CorrectlyAddPastryPrices_Int()
     {
-      Pastry newCust = new Pastry("4");
+      Pastry newCust = new Pastry("4", "cupcake");
       newCust.PastryCalc();
       Assert.AreEqual(8, newCust.PastrySubTotal);
     }
     [TestMethod]
     public void AddPastry_CorrectlyCalculatesSalePrices_Int()
     {
-      Pastry newCust = new Pastry("4");
+      Pastry newCust = new Pastry("4", "cupcake");
       newCust.PastryCalc();
       newCust.PastrySaleCalc();
       Assert.AreEqual(7, newCust.PastrySubTotal);
@@ -36,7 +36,7 @@ namespace PastryBakery.Tests
     [TestMethod]
     public void AddPastry_DoubleCheckCalculatesSalePrices_Int()
     {
-      Pastry newCust = new Pastry("12");
+      Pastry newCust = new Pastry("12", "cupcake");
       newCust.PastryCalc();
       newCust.PastrySaleCalc();
       Assert.AreEqual(20, newCust.PastrySubTotal);
@@ -44,8 +44,17 @@ namespace PastryBakery.Tests
     [TestMethod]
     public void AddPastry_CheckForZeroEntry_Int()
     {
-      Pastry newCust = new Pastry("0");
+      Pastry newCust = new Pastry("0", "cupcake");
       newCust.PastryCalc();
+      newCust.PastrySaleCalc();
+      Assert.AreEqual(0, newCust.PastrySubTotal);
+    }
+    [TestMethod]
+    public void PastryChoice_AdjustForCupcake_Int()
+    {
+      Pastry newCust = new Pastry("0", "cupcake");
+      newCust.PastryCalc();
+      newCust.PastryChoiceAdjust();
       newCust.PastrySaleCalc();
       Assert.AreEqual(0, newCust.PastrySubTotal);
     }

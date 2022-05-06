@@ -59,5 +59,14 @@ namespace BreadBakery.Tests
       newCust.ApplyDiscount();
       Assert.AreEqual(15, newCust.ApplyDiscount());
     }
+    [TestMethod]
+    public void DiscountBread_TwentyFivePercentOffDoubleCheck_Int()
+    {
+      Bread newCust = new Bread("11");
+      newCust.BreadCalc();
+      newCust.BreadSaleCalc();
+      newCust.ApplyDiscount();
+      Assert.AreEqual(30, newCust.ApplyDiscount());
+    }
   }
 }
