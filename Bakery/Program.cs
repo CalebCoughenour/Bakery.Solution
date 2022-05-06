@@ -13,6 +13,7 @@ public class Program
       Console.WriteLine("Our Bread Prices: $5 Each // Buy 2, get 1 Free!");
       Console.WriteLine("Our Pastry Prices: $2 Each // Every 3rd Pastry ONLY $1!");
       Console.WriteLine("Today only! Two types of pastry! Cupcake or Danish!");
+      Console.WriteLine("*Cupcakes are $2 extra each // $1 off every 3rd pastry still applies*");
       Console.WriteLine("---------------------------------------------------------------");
       
       Console.WriteLine("How many bread loaves?");
@@ -33,9 +34,9 @@ public class Program
         }
       }
 
-      Bread newBreadCount = new Bread(userBreadInput);
-      newBreadCount.BreadCalc();
-      newBreadCount.BreadSaleCalc();
+      Bread newBread = new Bread(userBreadInput);
+      newBread.BreadCalc();
+      newBread.BreadSaleCalc();
 
       Console.WriteLine("How many pastries?");
       string pastryCount = Console.ReadLine();
@@ -55,17 +56,32 @@ public class Program
         }
       }
 
-      Console.WriteLine("What type of pastries?");
+      Console.WriteLine("Cupcake or Danish?");
       string pastryType = Console.ReadLine();
-      Pastry newPastryCount = new Pastry(pastryCount, pastryType);
-      newPastryCount.PastryCalc();
-      newPastryCount.PastrySaleCalc();
 
-      int totalPrice = newBreadCount.BreadSubTotal + newPastryCount.PastrySubTotal;
-      if (newBreadCount.BreadCount >= 5)
+      while(true)
       {
-        double breadDiscount = newBreadCount.ApplyDiscount();
-        Console.WriteLine("GRAND TOTAL: " + (breadDiscount + newPastryCount.PastrySubTotal));
+        if (pastryType.ToLower() != "cupcake" && pastryType.ToLower() != "danish")
+        {
+          Console.WriteLine("Please choose Cupcake or Danish");
+          pastryType = Console.ReadLine();
+        }
+        else
+        {
+          break;
+        }
+      }
+
+      Pastry newPastry = new Pastry(pastryCount, pastryType);
+      newPastry.PastryCalc();
+      newPastry.PastryChoiceAdjust();
+      newPastry.PastrySaleCalc();
+
+      int totalPrice = newBread.BreadSubTotal + newPastry.PastrySubTotal;
+      if (newBread.BreadCount >= 5)
+      {
+        double breadDiscount = newBread.ApplyDiscount();
+        Console.WriteLine("GRAND TOTAL: " + (breadDiscount + newPastry.PastrySubTotal));
         Console.WriteLine("---------------------------------------------------------------");
       }
       else
