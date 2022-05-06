@@ -36,5 +36,13 @@ namespace Bakery.Tests
       newCust.BreadSaleCalc();
       Assert.AreEqual(15, newCust.BreadSubTotal);
     }
+    [TestMethod]
+    public void AddBread_CorrectlyCalculatesSalePricesDoubleCheck_Int()
+    {
+      Bread newCust = new Bread("12");
+      newCust.BreadCalc();
+      newCust.BreadSaleCalc();
+      Assert.AreEqual(40, newCust.BreadSubTotal);
+    }
   }
 }

@@ -1,4 +1,4 @@
-
+using System;
 
 namespace Bakery.Models
 {
@@ -18,6 +18,15 @@ namespace Bakery.Models
       for (int i = 0; i < BreadCount; i++)
       {
         BreadSubTotal += 5;
+      }
+      return BreadSubTotal;
+    }
+    public int BreadSaleCalc()
+    {
+      if (BreadCount >= 3)
+      {
+        int SaleCount = BreadCount / 3;
+        BreadSubTotal -= (SaleCount * 5);
       }
       return BreadSubTotal;
     }
