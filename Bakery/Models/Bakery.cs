@@ -50,5 +50,14 @@ namespace Bakery.Models
       }
       return PastrySubTotal;
     }
+     public int PastrySaleCalc()
+    {
+      if (PastryCount >= 3)
+      {
+        int SaleCount = PastryCount / 3;
+        PastrySubTotal -= (SaleCount * 1);
+      }
+      return PastrySubTotal;
+    }
   }
 }

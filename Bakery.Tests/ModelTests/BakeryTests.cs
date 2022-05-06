@@ -68,12 +68,20 @@ namespace Bakery.Tests
       Assert.AreEqual(8, newCust.PastrySubTotal);
     }
     [TestMethod]
-    public void AddBread_CorrectlyCalculatesSalePrices_Int()
+    public void AddPastry_CorrectlyCalculatesSalePrices_Int()
     {
       Pastry newCust = new Pastry("4");
       newCust.PastryCalc();
       newCust.PastrySaleCalc();
       Assert.AreEqual(7, newCust.PastrySubTotal);
+    }
+    [TestMethod]
+    public void AddPastry_DoubleCheckCalculatesSalePrices_Int()
+    {
+      Pastry newCust = new Pastry("12");
+      newCust.PastryCalc();
+      newCust.PastrySaleCalc();
+      Assert.AreEqual(20, newCust.PastrySubTotal);
     }
   }
 }
