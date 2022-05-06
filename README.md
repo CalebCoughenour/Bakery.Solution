@@ -14,7 +14,7 @@
 
 ## Description
 
-This is a console program that was built using C#. It is for a mock bakery named Pierre's Bakery. When first running the program the console will welcome the user and display the prices for both bread and pastries. Next, it will ask for how many of both types of food a user wants starting with bread. After the program receives the input it calculates the total price using two methods for each type of food. The prices are $5 per loaf and $2 per pastry. There is a sale of buy 2 get 1 free for bread and every third pastry is only $1. 
+This is a console program that was built using C#. It is for a mock bakery named Pierre's Bakery. When first running the program the console will welcome the user and display the prices for both bread and pastries. Next, it will ask for how many of both types of food a user wants starting with bread. After the program receives the input it calculates the total price using two methods for each type of food. The prices are $5 per loaf, $2 per Danish pastry and $4 per cupcake. There is a sale of buy 2 get 1 free for bread and every third pastry is only $1. 
 
 ## Necessary Tools
 
@@ -29,7 +29,7 @@ This is a console program that was built using C#. It is for a mock bakery named
 * Clone the repository using the copied URL and the "git clone" command
 * In the shell program, navigate to the root directory of the newly created file called "Bakery.Solution"
 * From the root directory, navigate to the directory named "Bakery"
-* In this directory run "dotnet run" to run the program
+* In this directory type "dotnet run" to run the program
 
 ## Test Instructions
 
