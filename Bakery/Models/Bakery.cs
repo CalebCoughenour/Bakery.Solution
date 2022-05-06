@@ -34,6 +34,13 @@ namespace Bakery.Models
 
   public class Pastry
   {
-    
+    public int PastryCount {get; set;}
+    public int PastrySubTotal {get; set;}
+
+    public Pastry(string pastries)
+    {
+      PastryCount = int.Parse(pastries);
+      PastrySubTotal = 0;
+    }
   }
 }
