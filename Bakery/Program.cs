@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Bakery.Models;
+using BreadBakery.Models;
+using PastryBakery.Models;
 using System.Linq;
 
 public class Program
@@ -19,18 +20,6 @@ public class Program
       newBreadCount.BreadCalc();
       newBreadCount.BreadSaleCalc();
 
-      // while(true)
-      // {
-      //   Console.WriteLine("You want " + newBreadCount.BreadCount);
-      //   string userResponse = Console.ReadLine();
-      //   if(userResponse.ToUpper() == "Y")
-      //   {
-      //     break;
-      //   }
-      // }  
-      
-
-      
       Console.WriteLine("How many pastries?");
       string userPastryInput = Console.ReadLine();
       Pastry newPastryCount = new Pastry(userPastryInput);
