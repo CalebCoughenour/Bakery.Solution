@@ -4,11 +4,13 @@ namespace PastryBakery.Models
   {
     public int PastryCount {get; set;}
     public int PastrySubTotal {get; set;}
+    public string PastryType {get; set;}
 
-    public Pastry(string pastries)
+    public Pastry(string pastries, string type)
     {
       PastryCount = int.Parse(pastries);
       PastrySubTotal = 0;
+      PastryType = type;
     }
     public int PastryCalc()
     {

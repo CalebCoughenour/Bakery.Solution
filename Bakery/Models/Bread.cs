@@ -1,5 +1,3 @@
-using System;
-
 namespace BreadBakery.Models
 {
   public class Bread
@@ -36,7 +34,6 @@ namespace BreadBakery.Models
       if (BreadCount >= 5)
       {
         discountPrice = (BreadSubTotal * .25);
-        Console.WriteLine(discountPrice);
         return BreadSubTotal - discountPrice;
       }
       return BreadSubTotal - discountPrice;
